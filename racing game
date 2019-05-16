@@ -1,0 +1,532 @@
+=========  html part =========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="help">
+        <p>Controls: Right, Left, UP. Down</p>
+    </div>
+    <div id="score_div">
+        Score: <span id="score">0</span>
+    </div>
+    <div id="scorelist">
+
+    </div>
+    <div id="road">
+        <div id="line_1" class="line"></div>
+        <div id="line_2" class="line"></div>
+        <div id="line_3" class="line"></div>
+        <div id="MainCar" class="car">
+            <div class="f_glass"></div>
+            <div class="b_glass"></div>
+            <div class="f_light_l"></div>
+            <div class="f_light_r"></div>
+            <div class="b_light_l"></div>
+            <div class="b_light_r"></div>
+            <div class="f_tyre_l"></div>
+            <div class="f_tyre_r"></div>
+            <div class="b_tyre_l"></div>
+            <div class="b_tyre_r"></div>
+        </div>
+        <div id="car1" class="car">
+                <div class="f_glass"></div>
+                <div class="b_glass"></div>
+                <div class="f_light_l"></div>
+                <div class="f_light_r"></div>
+                <div class="b_light_l"></div>
+                <div class="b_light_r"></div>
+                <div class="f_tyre_l"></div>
+                <div class="f_tyre_r"></div>
+                <div class="b_tyre_l"></div>
+                <div class="b_tyre_r"></div>
+            </div>
+            <div id="car2" class="car">
+                    <div class="f_glass"></div>
+                    <div class="b_glass"></div>
+                    <div class="f_light_l"></div>
+                    <div class="f_light_r"></div>
+                    <div class="b_light_l"></div>
+                    <div class="b_light_r"></div>
+                    <div class="f_tyre_l"></div>
+                    <div class="f_tyre_r"></div>
+                    <div class="b_tyre_l"></div>
+                    <div class="b_tyre_r"></div>
+                </div>
+                <div id="car3" class="car">
+                        <div class="f_glass"></div>
+                        <div class="b_glass"></div>
+                        <div class="f_light_l"></div>
+                        <div class="f_light_r"></div>
+                        <div class="b_light_l"></div>
+                        <div class="b_light_r"></div>
+                        <div class="f_tyre_l"></div>
+                        <div class="f_tyre_r"></div>
+                        <div class="b_tyre_l"></div>
+                        <div class="b_tyre_r"></div>
+                    </div>
+                        <div id="car4" class="car">
+                            <div class="f_glass"></div>
+                            <div class="b_glass"></div>
+                            <div class="f_light_l"></div>
+                            <div class="f_light_r"></div>
+                            <div class="b_light_l"></div>
+                            <div class="b_light_r"></div>
+                            <div class="f_tyre_l"></div>
+                            <div class="f_tyre_r"></div>
+                            <div class="b_tyre_l"></div>
+                            <div class="b_tyre_r"></div>
+                        </div>
+            <div id="restart_game">
+                <button id="restart">
+                    Restart <br>
+                    <small class="small_text">(press Enter)</small>
+                </button>
+            </div>
+                                
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="animation.js"></script>
+</body>
+</html>
+
+============= css part ==========================
+
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #cfdf3f;
+    font-family: sans-serif;
+}
+
+#road{
+    position: relative;
+    height: 90vh;
+    width: 25%;
+    left: 35%;
+    margin-top: 20px;;
+    background-color: #dd5ac7;
+    overflow: hidden;
+}
+.line{
+    position: absolute;
+    height: 150px;
+    width: 4%;
+    margin-left: 48%;
+    background-color: #b9be97f1;
+}
+#line_1{
+    top: -150px;
+}
+#line_2{
+    top: 150px;
+}
+#line_3{
+    top: 450px;
+}
+.car{
+    position: absolute;
+    height: 70px;
+    width: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 8px 0px black;
+    background: rgb(15, 44, 209);
+}
+#MainCar{
+    bottom: 8%;
+    left: 60%;
+    background-color: #ffdf5a;
+}
+                        #car1{
+                            top: -100px;
+                            left: 60%;
+                            background-color: #26c5ff;
+                        }
+                        #car2{
+                            top: -200px;
+                            left: 40%;
+                            background-color: #26c5ff;
+                        }
+                        #car3{
+                            top: -350px;
+                            left: 50%;
+                            background-color: #32c71e;
+                        }
+                        #car4{
+                            top: -550px;
+                            left: 30%;
+                            background-color: #32c71e;
+                        }
+
+.f_glass{
+    position: absolute;
+    height: 20%;
+    width: 60%;
+    margin-left: 20%;
+    top: 15%;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #aa9898;
+}
+.b_glass{
+    position: absolute;
+    height: 20%;
+    width: 60%;
+    margin-left: 20%;
+    bottom: 15%;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #aa9898;
+}
+.f_light_l{
+    position: absolute;
+    height: 10%;
+    width: 20%;
+    margin-left: 10%;
+    top: -6%;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #efefef;
+}
+.f_light_r{
+    position: absolute;
+    height: 10%;
+    width: 20%;
+    margin-left: 70%;
+    top: -6%;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #efefef;
+}
+.b_light_l{
+    position: absolute;
+    height: 10%;
+    width: 20%;
+    margin-left:10%;
+    top: 95%;
+    background-color: #da2121;
+    border-radius: 0px 0px 5px 5px;
+}
+.b_light_r{
+    position: absolute;
+    height: 10%;
+    width: 20%;
+    margin-left:70%;
+    top: 95%;
+    background-color: #da2121;
+    border-radius: 0px 0px 5px 5px;
+}
+.f_tyre_l{
+    position: absolute;
+    height: 20%;
+    width: 10%;
+    background: rgb(179, 214, 84);
+    top: 20%;
+    left: -10%;
+    border-radius: 5px 0px 0px 5px;
+}
+.f_tyre_r{
+    position: absolute;
+    height: 20%;
+    width: 10%;
+    background: rgb(179, 214, 84);;
+    top: 20%;
+    left: 100%;
+    border-radius: 0px 5px 5px 0px;
+}
+.b_tyre_l{
+    position: absolute;
+    height: 20%;
+    width: 10%;
+    background: rgb(179, 214, 84);;
+    top: 70%;
+    left: -10%;
+    border-radius: 5px 0px 0px 5px;
+}
+.b_tyre_r{
+    position: absolute;
+    height: 20%;
+    width: 10%;
+    background: rgb(179, 214, 84);;
+    top: 70%;
+    left: 100%;
+    border-radius: 0px 5px 5px 0px;
+}
+
+#restart_game {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #a5b137;
+    color: white;
+    font-family: sans-serif;
+    font-size: 40px;
+    text-align: center;
+    display: none;
+}
+
+#restart {
+    border: none;
+    padding: 25px;
+    color: white;
+    background-color: #8a64ff;
+    font-size: 30px;
+    margin-top: 30%;
+}
+.small_text{
+    font-size: 15px;
+}
+#score_div{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+    font-size: 35px;
+    background-color: rgba(187, 153, 153, 0.781);
+    color: #3866bd;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 4px 4px 4px 5px #808080;
+    transition: .5s  all;
+    transition:  background-color .5s linear;
+    transition: box-shadow .5s linear;
+    cursor: pointer;
+}
+#score_div:hover{
+    background: white;
+    box-shadow: 4px 4px 4px 6px #dbd8d8 ;
+}
+
+
+#scorelist{
+    position: absolute;
+    
+    margin-top: 30%;
+    margin-left: 10%;
+    font-size: 35px;
+    background: white;
+    color: #1a1b1d;
+}
+
+========= js part ============
+
+
+$(function(){
+    var anim_id;
+//  main objects
+    var MainCar = $("#MainCar"),
+        road = $("#road"),
+        car_1 = $("#car1"),
+        car_2 = $("#car2"),
+        car_3 = $("#car3"),
+        car_4 = $("#car4"),
+        line_1 = $("#line_1"),
+        line_2 = $("#line_2"),
+        line_3 = $("#line_3"),
+        restart_game = $("#restart_game"),
+        restart_btn = $("#restart");
+        score = $("#score"),
+        lastscore = $("#scorelist");
+
+// properties of ...
+        var road_left = parseInt(road.css('left')),
+            road_width = parseInt(road.width()),
+            road_height = parseInt(road.height()),
+            MainCar_width = parseInt(MainCar.width()),
+            MainCar_height = parseInt(MainCar.height());
+
+        var gameover = false,       // ending game
+            score_counter  = 1,     // count current score
+            speed = 2,               //speed of cars
+            line_speed = 5,         // moving lines at the mid
+            move_right = false,
+            move_left = false,
+            move_up = false,
+            move_down = false;
+// ==============================================
+
+
+    $(document).on('keydown', function(e){
+
+        if (gameover === false){
+            var key = e.keyCode;
+            
+            if (key === 37 &&  move_left === false){
+                move_left = requestAnimationFrame(left);
+            }
+            else
+                if (key === 38 && move_up === false){
+                    move_up = requestAnimationFrame(up);
+                }
+            else
+                if(key === 39 && move_right === false){
+                    move_right = requestAnimationFrame(right);
+                } 
+            else
+                if(key === 40 && move_down === false){
+                    move_down = requestAnimationFrame(down);
+                } 
+        }
+    });
+
+    $(document).on('keyup', function(e){
+        if (gameover === false){
+            var key = e.keyCode;
+
+            if (key === 37){
+                cancelAnimationFrame(move_left);
+                move_left = false;
+            }
+            if (key === 38){
+                cancelAnimationFrame(move_up);
+                move_up = false;
+            }
+            if (key === 39){
+                cancelAnimationFrame(move_right);
+                move_right = false;
+            }
+            if (key === 40){
+                cancelAnimationFrame(move_down);
+                move_down = false;
+            }
+        }
+    });
+
+
+    function left(){
+        if (gameover === false && parseInt(MainCar.css('left')) > 0){
+            MainCar.css('left', parseInt(MainCar.css('left')) - 5);
+            move_left = requestAnimationFrame(left);
+        }
+    }
+
+    function up(){
+        if (gameover === false && parseInt(MainCar.css('top')) > 0){
+            MainCar.css('top', parseInt(MainCar.css('top')) - 3);
+            move_up = requestAnimationFrame(up);
+        }
+    }
+
+    function right(){
+        if (gameover === false && parseInt(MainCar.css('left')) < road_width - MainCar_width){
+            MainCar.css('left', parseInt(MainCar.css('left')) + 5);
+            move_right = requestAnimationFrame(right);
+        }
+    }
+
+    function down(){
+        if (gameover === false && parseInt(MainCar.css('top')) < road_height - MainCar_height){
+            MainCar.css('top', parseInt(MainCar.css('top')) + 3);
+            move_down = requestAnimationFrame(down);
+        }
+    }
+
+
+    anim_id = requestAnimationFrame(repeat);
+
+    function repeat(){
+        if ( collision(MainCar , car_1) || collision(MainCar , car_2) || collision(MainCar , car_3) || collision(MainCar , car_4)){
+            stop_the_game();
+            AddScore();
+            return;
+        }
+        
+        score_counter++;
+        
+        if (score_counter % 20 == 0){
+            score.text(parseInt(score.text()) + 1);
+        }
+        if (score_counter % 500 == 0){
+            speed++;
+            line_speed++;
+        }
+        
+        
+        car_down(car_1);
+        car_down(car_2);
+        car_down(car_3);
+        
+        car_down(car_4);
+
+        line_down(line_1);
+        line_down(line_2);
+        line_down(line_3);
+        
+        
+        
+        anim_id = requestAnimationFrame(repeat);
+    }
+
+    function AddScore(){
+        if (gameover === true)
+            $("#scorelist").text(score.text());
+    }
+
+    function car_down(car){
+        var car_current_top = parseInt(car.css('top'));
+        if (car_current_top > road_height){
+            car_current_top = -200;
+            var car_left = parseInt(Math.random() * (road_width - MainCar_width));
+            car.css('left', car_left);
+        }
+        car.css('top', car_current_top + speed);
+    }
+
+    function line_down(line){
+        var line_current_top = parseInt(line.css('top'));
+        if (line_current_top > road_height){
+            line_current_top = -300;
+        }
+        line.css('top', line_current_top + line_speed);
+    }
+
+    restart_btn.click(function(){
+        location.reload();
+
+        
+    });
+
+    function stop_the_game(){
+        gameover = true;
+        cancelAnimationFrame(anim_id);
+        cancelAnimationFrame(move_left);
+        cancelAnimationFrame(move_up);
+        cancelAnimationFrame(move_right);
+        cancelAnimationFrame(move_down);
+        restart_game.slideDown();
+        restart_btn.focus();
+        
+    }
+
+    
+        
+    
+    function collision($div1, $div2){
+        var x1 = $div1.offset().left,
+        y1 = $div1.offset().top,
+        h1 = $div1.outerHeight(true),
+        w1 = $div1.outerWidth(true),
+        b1 = y1 + h1,
+        r1 = x1 + w1,
+        x2 = $div2.offset().left,
+        y2 = $div2.offset().top,
+        h2 = $div2.outerHeight(true),
+        w2 = $div2.outerWidth(true),
+        b2 = y2 + h2,
+        r2 = x2 + w2;
+        
+        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2)
+                return false;
+
+            return true;
+
+
+    }
+
+
+});
+
